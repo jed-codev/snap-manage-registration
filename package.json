@@ -10,6 +10,7 @@
     "lint": "eslint src --fix --ext .js,.jsx,.ts,.tsx",
     "build": "npm run lint && tsc",
     "prepare": "husky install",
+    "prisma:generate": "prisma generate",
     "codegen": "graphql-codegen"
   },
   "husky": {

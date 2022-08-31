@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Post from "./provider";
 import * as postValidators from "../../utils/validators/post";
 import { validateArgs } from "../../utils/helpers";

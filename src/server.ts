@@ -8,7 +8,7 @@ import { DocumentNode } from "graphql";
 
 const app = async () => {
   const typeDefs = (await loadFiles(
-    "src/type-defs/*.schema.graphql"
+    "src/schemata/*.schema.graphql"
   )) as DocumentNode[];
 
   // instantiate the apollo server
@@ -18,9 +18,10 @@ const app = async () => {
   });
 
   // start the graphql server
-  server.listen().then(({ url }) => {
-    console.log(`Server ready at ${url}`);
-  });
+  // server.listen().then(({ url }) => {
+  //   console.log(`Server ready at ${url}`);
+  // });
+  server.listen();
 };
 
 app();
