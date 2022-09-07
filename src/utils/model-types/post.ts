@@ -1,7 +1,4 @@
-export type Post = {
-  id: string;
-  subject: string;
-  content: string;
-};
+import type { Post } from "@prisma/client";
 
+export { Post };
 export type Posts = Post[];
