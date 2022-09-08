@@ -1,20 +1,5 @@
 version: "3"
 services:
-  backend-service:
-    container_name: backend-service 
-    # image: snapraise/backend-service:latest
-    build: .
-    ports:
-      - '4000:4000'
-    depends_on:
-      - database-service
-    volumes:
-      - .:/backend_service
-      # - /backend_service/node_modules
-    # command: ["npm", "start"]
-    networks:
-      - snap-dev-network
-
   # prisma-studio:
   #   container_name: prisma-studio
   #   image: snapraise/backend-service:latest
@@ -40,6 +25,21 @@ services:
       - POSTGRES_HOST=database-service
       - POSTGRES_PORT=5432
       - POSTGRES_HOST_AUTH_METHOD=trust
+    networks:
+      - snap-dev-network
+
+  backend-service:
+    container_name: backend-service 
+    # image: snapraise/backend-service:latest
+    build: .
+    ports:
+      - '4000:4000'
+    depends_on:
+      - database-service
+    volumes:
+      - .:/backend_service
+      # - /backend_service/node_modules
+    # command: ["npm", "start"]
     networks:
       - snap-dev-network
 

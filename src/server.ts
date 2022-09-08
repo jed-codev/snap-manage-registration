@@ -3,13 +3,10 @@ import { ApolloServer } from "apollo-server";
 // import resolvers
 import { resolvers } from "./resolvers";
 
-import { loadFiles } from "@graphql-tools/load-files";
-import { DocumentNode } from "graphql";
+import { loadTypeDefs } from "./utils/helpers";
 
 const app = async () => {
-  const typeDefs = (await loadFiles(
-    "src/schemata/*.schema.graphql"
-  )) as DocumentNode[];
+  const typeDefs = await loadTypeDefs();
 
   // instantiate the apollo server
   const server = new ApolloServer({
